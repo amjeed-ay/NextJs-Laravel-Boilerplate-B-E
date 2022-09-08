@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
@@ -93,6 +93,7 @@ class UserController extends Controller
         $fields = $request->validate([
             'active' => 'required|boolean',
         ]);
+
         $user->update($fields);
 
         return response()->noContent();
